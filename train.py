@@ -102,11 +102,13 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 
 #TODO: Experiment with another optimizer and note any differences in loss of our model. Does the final loss increase or decrease? 
 """
-
+The initial loss of the Adam optimizer was 0.0003, which is very respectable for this model. 
 """
 #TODO CONT: Speculate on why your changed optimizer may increase or decrease final loss
 criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+# optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
