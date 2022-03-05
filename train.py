@@ -103,12 +103,24 @@ model = NeuralNet(input_size, hidden_size, output_size).to(device)
 #TODO: Experiment with another optimizer and note any differences in loss of our model. Does the final loss increase or decrease? 
 """
 The initial loss of the Adam optimizer was 0.0003, which is very respectable for this model. 
+
+I knew before-hand that the SGD optimizer was outperformed by the Adam optimizer,
+however I was curious to know just HOW much better it was. After experimenting
+I got a final loss of 1.7631. In comparison, our results will only vary by ~ 5%, 
+but it is still worth choosing Adam over SGD.
 """
 #TODO CONT: Speculate on why your changed optimizer may increase or decrease final loss
-criterion = nn.CrossEntropyLoss()
-# optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
+"""
+Adam is better comparatively due to the fact that it is essentially SGD with extra steps. 
+It is a combination of RMSprop, and SGD with momentum. momentum is the ability that Adam has 
+(which SGD doesn't) that helps accelerate gradients vectors in the right directon, thus leading
+to faster converging.
+"""
+criterion = nn.CrossEntropyLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
+
+# optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
 for epoch in range(num_epochs):
     for (words, labels) in train_loader:
