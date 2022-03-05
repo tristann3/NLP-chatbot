@@ -61,7 +61,23 @@ class ChatDataset(Dataset):
 
 #TODO: How do these hyperparameters affect optimization of our chatbot? 
 """
+Batch size determines the number of times the data is propogated (back or forwards) throughout
+the model, larger batch sizes require more memory but yield better results. This parameter 
+exponentially increases the runtime of our training data as the batch size increases.
 
+The hidden size is the number of nodes in a hidden layer. This is optimized by making the hidden_size
+equal or close to the number ofnodes in the input or outpus layer.
+
+The output size is optimized here by making the output_size equal to the number or POS tags we have,
+in this case it is 7 and should not be tuned any further.
+
+The learning rate has to do with the step size in the gradient descent. A high learning rate may
+cause problems with settling in a local minimum instead of the true minimum, which is why here
+we have a very small learning rate to combat that issue
+
+the num_epochs variable is the number of times the model runs. This hyperparameter is conjunctively
+used in awareness of the learning rate, we have lots of epochs here because we have a very low learning
+rate. If we had a larger learning rate we would decrease the number of epochs.
 """
 batch_size = 8
 hidden_size = 8
