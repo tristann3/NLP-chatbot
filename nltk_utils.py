@@ -33,8 +33,11 @@ def bag_of_words(tokenized_sentence, all_words):
     return bag
 
 
-#TODO: Test our function with the below sentence to visualize Tokenization. 
-#TODO CONT: What is the purpose of tokenizing our text? 
+"""
+The purpose of tozenizing the text is to brek down the sentance into 'tokens'
+so that it is easier for computers to understand. This is broken down into a list
+of individual words instead of one sentance string.
+"""
 #Testing our Tokenizer
 test_sentence = "I will not live in peace until I find the Avatar!"
 print(tokenize(test_sentence))
@@ -42,6 +45,8 @@ print(tokenize(test_sentence))
 #TODO: Test our Stemming function on the below words. 
 #TODO CONT: How does stemming affect our data?
 words = ["Organize", "organizes", "organizing", "disorganized"]
+for word in words:
+    print(stem(word))
 
 
 #TODO: Implement the above Bag of Words function on the below sentence and words. 
