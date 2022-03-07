@@ -48,6 +48,14 @@ words = ["Organize", "organizes", "organizing", "disorganized"]
 for word in words:
     print(stem(word))
 
+"""
+Stemming cleans word data by identifying similar patterns. This is to combat
+nearly-identical words but of which are sightly different due to past-tense, 
+present participle, etc. It cleans it by chopping off part of it, making the 
+3 "slightly different" words, identical. this affects our data outside of the 
+word by helping the Bag of Words function cut down on its scope!
+"""
+
 
 #TODO: Implement the above Bag of Words function on the below sentence and words. 
 #TODO (CONTINUED): What does the Bag of Words model do? Why would we use Bag of Words here instead of TF-IDF or Word2Vec?
@@ -56,5 +64,15 @@ sentence = ["I", "will", "now", "live", "in", "peace", "until", "I", "find", "th
 words = ["hi", "hello", "I", "you", "the", "bye", "in", "cool", "wild", "find"]
 print(bag_of_words(sentence, words))
 print("--------------")
+
+"""
+The Bag of Words function transforms the tokenized sentence into a matrix. 
+Data shows either a 1 or a 0 in which tht word is present or not. Bag of 
+Words is useful to us because it can show how frewuent words are used in our corpus.
+
+We use Bag of Words over TF-IDF and Word2Vec because of the cimplicity of this task. 
+We have a very small corpus. TF-IDF is able to ignore filler words, which we have little to none.
+Word2Vec is a system to identify similar words with similar meaning.
+"""
 
 
