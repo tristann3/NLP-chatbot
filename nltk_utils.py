@@ -37,6 +37,7 @@ def bag_of_words(tokenized_sentence, all_words):
 #TODO CONT: What is the purpose of tokenizing our text? 
 #Testing our Tokenizer
 test_sentence = "I will not live in peace until I find the Avatar!"
+print(tokenize(test_sentence))
 
 #TODO: Test our Stemming function on the below words. 
 #TODO CONT: How does stemming affect our data?
@@ -48,6 +49,7 @@ words = ["Organize", "organizes", "organizing", "disorganized"]
 print("Testing our bag_of_words function")
 sentence = ["I", "will", "now", "live", "in", "peace", "until", "I", "find", "the", "Avatar"]
 words = ["hi", "hello", "I", "you", "the", "bye", "in", "cool", "wild", "find"]
+print(bag_of_words(sentence, words))
 print("--------------")
 
 
