@@ -3,8 +3,10 @@ import numpy as np
 import torch
 import torch.nn as nn 
 from torch.utils.data import Dataset, DataLoader
-from model import NeuralNet
+from model import NeuralNet, AdvancedNeuralNet
 from nltk_utils import tokenize, stem, bag_of_words
+from transformers import AutoModel, BertTokenizerFast
+
 with open('intents.json', 'r') as f:
     intents = json.load(f)
 
@@ -19,6 +21,7 @@ for intent in intents['intents']:
         w = tokenize(pattern)
         all_words.extend(w)
         xy.append((w, tag))
+        
 
 print(all_words)
 ignore_words = ['?', '!', '.', ',']
@@ -45,19 +48,10 @@ for (pattern_sentence, tag) in xy:
 X_train = np.array(X_train)
 y_train = np.array(y_train)
 
-
-#Create a new Dataset
-class ChatDataset(Dataset):
-    def __init__(self):
-        self.n_samples = len(X_train)
-        self.x_data = X_train
-        self.y_data = y_train
-
-    def __getitem__(self, index):
-        return self.x_data[index], self.y_data[index]
-
-    def __len__(self):
-        return self.n_samples
+# Import BERT
+bert = AutoModel.from_pretrained('bert-base-uncased')
+# Load BERT tozenizer
+tokenizer = BertTokenizerFast.from_pretrained('bert-base-uncased')
 
 #TODO: How do these hyperparameters affect optimization of our chatbot? 
 """
@@ -96,7 +90,7 @@ train_loader = DataLoader(dataset=dataset, batch_size=batch_size, shuffle=True)
 
 #The below function helps push to GPU for training if available
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-model = NeuralNet(input_size, hidden_size, output_size).to(device)
+model = AdvancedNeuralNet(bert, input_size, hidden_size, output_size).to(device)
 
 #Loss and Optimizer
 

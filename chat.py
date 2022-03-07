@@ -1,7 +1,7 @@
 import random
 import json
 import torch 
-from model import NeuralNet
+from model import NeuralNet, AdvancedNeuralNet
 from nltk_utils import bag_of_words, tokenize
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -20,7 +20,7 @@ all_words = data["all_words"]
 tags = data["tags"]
 model_state = data["model_state"]
 
-model = NeuralNet(input_size, hidden_size, output_size).to(device)
+model = AdvancedNeuralNet(input_size, hidden_size, output_size).to(device)
 model.load_state_dict(model_state)
 model.eval()
 
