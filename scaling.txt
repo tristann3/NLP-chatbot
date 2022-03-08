@@ -1,0 +1,6 @@
+Integrating this chat bot would require us to create a package out of this project, which would be 
+installed as an external package on one or many projects. For example if I have a seperate
+front end and back end, I could use jQuery to make requests to the back end. My back end would make 
+requests to my package and await responses from the chatbot. I imagine this would take some configuration
+in order to make this project a package and be able to take in prompts and send responses via HTTP, but that
+is where I would start. 
