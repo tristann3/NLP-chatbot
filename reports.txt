@@ -1,0 +1,25 @@
+NeuralNet() model
+epoch 100/1000, loss=0.7266
+epoch 200/1000, loss=0.1528
+epoch 300/1000, loss=0.0069
+epoch 400/1000, loss=0.0072
+epoch 500/1000, loss=0.0055
+epoch 600/1000, loss=0.0012
+epoch 700/1000, loss=0.0006
+epoch 800/1000, loss=0.0016
+epoch 900/1000, loss=0.0004
+epoch 1000/1000, loss=0.0008
+final loss, loss=0.0008
+
+AdvancedNeuralNet() model
+epoch 100/1000, loss=0.5922
+epoch 200/1000, loss=1.5862
+epoch 300/1000, loss=0.1791
+epoch 400/1000, loss=0.0209
+epoch 500/1000, loss=0.0078
+epoch 600/1000, loss=0.9826
+epoch 700/1000, loss=0.0009
+epoch 800/1000, loss=0.5494
+epoch 900/1000, loss=0.0001
+epoch 1000/1000, loss=0.0565
+final loss, loss=0.0565
