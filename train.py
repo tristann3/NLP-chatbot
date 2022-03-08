@@ -168,24 +168,24 @@ for epoch in range(num_epochs):
         batch = [r.to(device) for r in batch]
         sent_id, mask, labels = batch
 
-        #Forward pass
+        # Forward pass
         outputs = model(sent_id, mask)
         loss = criterion(outputs, labels)
 
-        #backward and optimizer step 
+        # backward and optimizer step 
         optimizer.zero_grad()
 
-        #Calculate the backpropagation
+        # Calculate the backpropagation
         loss.backward()
         optimizer.step()
 
-    #Print progress of epochs and loss for every 100 epochs
+    # Print progress of epochs and loss for every 100 epochs
     if (epoch +1) % 100 == 0:
         print(f'epoch {epoch+1}/{num_epochs}, loss={loss.item():.4f}')
 
 print(f'final loss, loss={loss.item():.4f}')
 
-    #Need to save the data 
+    # Need to save the data 
 data = {
     "model_state": model.state_dict(),
     "input_size": input_size,

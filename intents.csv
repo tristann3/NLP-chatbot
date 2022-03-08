@@ -1,4 +1,21 @@
 text,label
+What is the weather today,weather
+What is the temperature,weather
+Will it rain today,weather
+How many inches will it snow,weather
+How may I help you today,help
+Are you looking for something,help
+How can I help,help
+Can I help you,help
+What can I do for you,help
+What can I help you with,help
+Are you tired,mood
+Are you happy,mood
+Are you sad,mood
+Are you down,mood
+You look sad,mood
+You look happy,mood
+You look gloomy,mood
 Hi,greeting
 Hey,greeting
 How are you,greeting

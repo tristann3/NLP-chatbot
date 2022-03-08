@@ -1,6 +1,58 @@
 {
     "intents": [
       {
+        "tag": "weather",
+        "patterns": [
+          "What is the weather today?",
+          "What is the temperature?",
+          "Will it rain today?",
+          "How many inches will it snow?"          
+        ],
+        "responses": [
+          "It is 70 degrees and sunny.",
+          "It is 50 degrees outside",
+          "Yes, there is a 100 percent chance of rain.",
+          "3 inches overnight."
+        ]
+      },
+      {
+        "tag": "help",
+        "patterns": [
+          "How may I help you today?",
+          "Are you looking for something?",
+          "How can I help?",
+          "Can I help you?",
+          "What can I do for you?",
+          "What can I help you with?"
+        ],
+        "responses": [
+          "I'm looking for a dog.",
+          "Yes, I'm looking for a cat.",
+          "You can help me by leaving me alone.",
+          "Can you help me find something?"
+        ]
+      },
+      {
+        "tag": "mood",
+        "patterns": [
+          "Are you tired?",
+          "Are you happy?",
+          "Are you sad?",
+          "Are you down?",
+          "You look sad",
+          "You look happy",
+          "You look gloomy"
+        ],
+        "responses": [
+          "Yes",
+          "No",
+          "Sort of",
+          "Kinda",
+          "Kind of",
+          "Yes, I've had a long day"
+        ]
+      },
+      {
         "tag": "greeting",
         "patterns": [
           "Hi",
