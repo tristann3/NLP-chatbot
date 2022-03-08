@@ -1,0 +1,50 @@
+# num_epochs tuned to 900 instead of 1000, since it had the lowest loss in the range of losses in the AdvancedNeuralNet model
+epoch 100/900, loss=0.2820
+epoch 200/900, loss=0.0173
+epoch 300/900, loss=1.7185
+epoch 400/900, loss=0.2634
+epoch 500/900, loss=0.2795
+epoch 600/900, loss=0.0745
+epoch 700/900, loss=0.0004
+epoch 800/900, loss=0.0033
+epoch 900/900, loss=0.0389
+final loss, loss=0.0389
+
+
+# learning_rate to 0.01 from 0.001, I'm doing this test to see the coorelation of a 10x learning rate to the same number of epochs (1000)
+epoch 100/1000, loss=0.0010
+epoch 200/1000, loss=0.2023
+epoch 300/1000, loss=1.1680
+epoch 400/1000, loss=0.0863
+epoch 500/1000, loss=0.1929
+epoch 600/1000, loss=0.2427
+epoch 700/1000, loss=1.5821
+epoch 800/1000, loss=0.0397
+epoch 900/1000, loss=0.0441
+epoch 1000/1000, loss=0.0016
+final loss, loss=0.0016
+
+
+# combining learning_rate and num_epochs tuning. learning_rate to 0.01 and num_epochs to 700
+# 700 seemed to be the sweet spot in the first tuning test, the learning rate increase seemed to help the final loss as well.
+epoch 100/700, loss=0.3518
+epoch 200/700, loss=0.1760
+epoch 300/700, loss=0.0107
+epoch 400/700, loss=0.6486
+epoch 500/700, loss=0.0246
+epoch 600/700, loss=0.0665
+epoch 700/700, loss=0.0299
+final loss, loss=0.0299
+
+#batch_size to 10 to see if it will reduce the number of innacurate estimates on the error gradient
+epoch 100/1000, loss=0.7645
+epoch 200/1000, loss=0.4473
+epoch 300/1000, loss=0.2652
+epoch 400/1000, loss=0.3600
+epoch 500/1000, loss=0.2786
+epoch 600/1000, loss=0.0211
+epoch 700/1000, loss=0.1255
+epoch 800/1000, loss=0.0034
+epoch 900/1000, loss=0.0120
+epoch 1000/1000, loss=0.0884
+final loss, loss=0.0884
